@@ -1,26 +1,9 @@
 use std::net::{TcpListener, TcpStream, SocketAddrV4};
 use std::collections::HashMap;
 use std::io::{Write, Read};
-
 use message::*;
 
-// let listener = TcpListener::bind("127.0.0.1:80").unwrap();
-//
-// fn handle_client(stream: TcpStream) {
-//     // ...
-// }
-//
-// // accept connections and process them serially
-// for stream in listener.incoming() {
-//     match stream {
-//         Ok(stream) => {
-//             handle_client(stream);
-//         }
-//         Err(e) => { /* connection failed */ }
-//     }
-// }
-
-enum HostError {
+pub enum HostError {
     BindError,
     ConnectError,
     SendError,
